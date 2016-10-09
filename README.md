@@ -2,6 +2,8 @@
 
 #### yrui是一套基于react的UI模版，使用typescript编写、webpack构建。
 
+### 安装 `$ npm i yrui`.
+
 ## 运行demo
 
 1. Clone this repo:
