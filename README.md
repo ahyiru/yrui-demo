@@ -21,7 +21,7 @@ $ npm i
 $ npm start 		//默认端口8080
 `
 
-4. 打开浏览器，访问: [http://localhost:8000/](http://localhost:8000/)
+4. 打开浏览器，访问: [http://localhost:8080/](http://localhost:8080/)
 
 
 ## 页面配置
