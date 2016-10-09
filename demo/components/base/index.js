@@ -6,7 +6,6 @@ import Yheader from '../header';
 import Yaside from '../aside';
 
 import {getCurrent} from '../../configs/tools';
-
 import {sidebarMenu,notifyList} from '../../models/models';
 
 export default class Yframe extends Component {
