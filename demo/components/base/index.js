@@ -9,10 +9,6 @@ import {getCurrent} from '../../configs/tools';
 
 import {sidebarMenu,notifyList} from '../../models/models';
 
-interface BaseProps {
-
-}
-
 export default class Yframe extends Component {
 
   static sidebarMenu=sidebarMenu;
