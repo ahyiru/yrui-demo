@@ -1,6 +1,6 @@
 {
   "name": "yrui-demo",
-  "version": "0.1.3",
+  "version": "0.1.5",
   "description": "一套基于react的UI模版",
   "main": "server.js",
   "scripts": {
