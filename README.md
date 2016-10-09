@@ -1,3 +1,4 @@
 # yrui-demo
-#### 基于react，使用typescript(es6)编写，webpack构建的 react-ui template
+#### yrui是一套基于react的UI模版，使用typescript编写、webpack构建。
+使用typescript编写、webpack构建的一套react-ui template
 
