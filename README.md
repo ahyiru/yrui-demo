@@ -199,6 +199,12 @@ $ npm start 		//默认端口8080
 	      'legendselectchanged': this.onChartLegendselectchanged
 	    };
 
+### tables
+
+`<Ytables yth={tableData.thead} ytb={tableData.tbody} editable={true} />`
+
+- yth设置表头，ytb设置表格内容。二者都为数组。
+- editable设置表格是否可编辑。true为可编辑，false不可编辑。
 
 
 #### 持续更新中...
