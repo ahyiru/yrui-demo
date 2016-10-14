@@ -2,6 +2,8 @@ import React,{Component} from 'react';
 
 import './form.less';
 
+import drag from './drag';
+
 export default class Yform extends Component {
 
 	constructor(props){
@@ -12,10 +14,10 @@ export default class Yform extends Component {
   };
 
   componentDidMount=()=>{
-    require('./drag.js');
+    drag.init();
   };
   componentWillUnmount=()=>{
-    
+    drag.distroy();
   };
 
 
