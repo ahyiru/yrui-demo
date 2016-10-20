@@ -206,5 +206,14 @@ $ npm start 		//默认端口8080
 - yth设置表头，ytb设置表格内容。二者都为数组。
 - editable设置表格是否可编辑。true为可编辑，false不可编辑。
 
+### autocomplete
+
+###### 支持鼠标点选和键盘上下移动回车选择
+
+`<Autocomplete data={data} title={title} />`
+
+- title设置标题。
+- data设置设置提示内容。
+
 
 #### 持续更新中...
