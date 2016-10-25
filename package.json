@@ -1,6 +1,6 @@
 {
   "name": "yrui-demo",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "一套基于react的UI模版",
   "main": "server.js",
   "scripts": {
@@ -43,7 +43,7 @@
     "webpack": "^1.13.2",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-hot-middleware": "^2.12.2",
-    "yrui":"^0.2.6"
+    "yrui":"^0.2.7"
   },
   "dependencies": {
     "bluebird": "^3.4.3",
