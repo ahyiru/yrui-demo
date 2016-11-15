@@ -34,7 +34,7 @@ $ npm start 		//默认端口8080
   	  <main>
        <section className="y-main">
          <div className="y-container">
-           <YpageHeader data={data} />
+           <YpageHeader data={data} hidePagetitle={true} />
            <div className="y-pagecontent">
              <div>{children}</div>
            </div>
@@ -45,6 +45,8 @@ $ npm start 		//默认端口8080
  	  <Ynotify notify={notify} />
     </div>
 
+- hidePagetitle设置是否显示主页面标题，true为显示，false隐藏。
+
 ### 头部
 
 	<header>
@@ -54,7 +56,7 @@ $ npm start 		//默认端口8080
 	        <span><b>React</b> UI Demo</span>   
 	      </a>
 	    </section>
-	    <Ynav className="y-nav" dropList={dropList} />
+	    <Ynav className="y-nav" dropList={dropList} hideRightTogbar={true} />
 	  </div>
 	</header>
 
@@ -111,9 +113,13 @@ $ npm start 		//默认端口8080
 
 - searchFlag设置是否显示搜索框，true为显示，false隐藏。
 
+- hideRightTogbar设置是否显示右侧边栏切换按钮，true为显示，false隐藏。
+
 - leftList是左边菜单，rightList为右边菜单。
 
-- icon是显示图标，animate设置下拉菜单显示方式。有`fade-in-left`、`fade-in-right`、`fade-in-top`、`fade-in-bottom`四种。
+- icon是显示图标。用户自定义图标：require('../styles/images/usr.jpg')，'fa fa-user'：font-awesome图标。
+
+- animate设置下拉菜单显示方式。有`fade-in-left`、`fade-in-right`、`fade-in-top`、`fade-in-bottom`四种。
 
 - items为下拉菜单内容。
 
@@ -122,8 +128,10 @@ $ npm start 		//默认端口8080
 
 	<aside>
    	  <YsideBar menu={this.props.sideBarMenu} />
-   	  <YrightBar tabs={rightbarTabs} tabList={rightbarTabLists} />
+   	  <YrightBar tabs={rightbarTabs} tabList={rightbarTabLists} userLogo={userLogo} />
    	</aside>
+
+- userLogo设置侧边栏显示用户logo与否，默认不显示，显示则设置userLogo=require('../styles/images/usr.jpg')。
 
 #### 左侧
 
