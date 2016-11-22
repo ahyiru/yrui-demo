@@ -24,6 +24,108 @@ $ npm start 		//默认端口8080
 4. 打开浏览器，访问: [http://localhost:8080/](http://localhost:8080/)
 
 
+## 样式配置
+
+### 栅格
+
+	<div class="ycol-6">
+		1~12等分
+	</div>
+	
+### 显示隐藏
+
+	<div class="y-show">
+		y-hide,y-show
+	</div>
+	
+### 左右浮动
+
+	<div class="y-left">
+		y-left,y-right
+	</div>
+
+### 块级内联
+
+	<div class="y-block">
+		y-block,y-inline
+	</div>
+	
+### badge
+
+	<div class="y-badge">
+		y-badge
+	</div>
+
+### button
+
+	<div class="ybtn ybtn-info ybtn-sm">
+		颜色：ybtn ybtn-default、ybtn-info、ybtn-success、ybtn-warning、ybtn-danger
+		大小：ybtn ybtn-sm、ybtn-lg
+		块级：ybtn ybtn-block
+	</div>
+	
+### input
+
+	<div class="y-input">
+		y-input
+	</div>
+	
+### switch
+
+	<div class="y-switch">
+		y-switch
+	</div>
+
+### panel
+
+	<div class="y-panel">
+		y-panel
+	</div>
+	
+### lists
+
+	<div class="y-lists">
+		<div class="y-list-title">
+		
+		</div>
+		<div class="y-list">
+			<div class="y-list-left">
+			
+			</div>
+			<div class="y-list-middle">
+			
+			</div>
+			<div class="y-list-right">
+			
+			</div>
+		</div>
+	</div>
+	
+### colors
+
+	.purple{color:#af5cc1 !important;}
+	.green{color:#27c24c !important;}
+	.red{color:#f05050 !important;}
+	.yellow{color:#fad733 !important;}
+	.blue{color:#23b7e5 !important;}
+	.orange{color:#ff7f50 !important;}
+	.gray{color:#666 !important;}
+	.primary{color:#7266ba !important;}
+	.success{color:#45b6af !important;}
+	.danger{color:#f3565d !important;}
+	.warning{color:#dfba49 !important;}
+	.info{color:#24cbe5 !important;}
+	.tip{color:#ff9655 !important;}
+	.default{color:#999 !important;}
+
+### animation
+
+	左边淡入：fade-in-left;
+	右边淡入：fade-in-right;
+	上边淡入：fade-in-up;
+	下边淡入：fade-in-down;
+
+
 ## 页面配置
 
 ### main页面
