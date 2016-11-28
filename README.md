@@ -51,6 +51,18 @@ $ npm start 		//默认端口8080
 	<div class="y-block">
 		y-block,y-inline
 	</div>
+
+### visibility
+
+	<div class="y-clearfloat">
+		y-clearfloat
+	</div>
+	
+### 清除浮动
+
+	<div class="y-left">
+		y-left,y-right
+	</div>
 	
 ### badge
 
@@ -160,7 +172,7 @@ $ npm start 		//默认端口8080
 	        <span><b>React</b> UI Demo</span>   
 	      </a>
 	    </section>
-	    <Ynav className="y-nav" dropList={dropList} hideRightTogbar={true} />
+	    <Ynav className="y-nav" dropList={dropList} hideRightTogbar={true} login={login} />
 	  </div>
 	</header>
 
@@ -218,6 +230,8 @@ $ npm start 		//默认端口8080
 - searchFlag设置是否显示搜索框，true为显示，false隐藏。
 
 - hideRightTogbar设置是否显示右侧边栏切换按钮，true为显示，false隐藏。
+
+- login为false时为已登录状态，头部右侧显示用户信息；未登录时login为登录注册路由，头部右侧显示登录、注册按钮。
 
 - leftList是左边菜单，rightList为右边菜单。
 
