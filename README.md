@@ -245,12 +245,18 @@ $ npm start 		//默认端口8080
 ### 侧边栏
 
 	<aside>
-   	  <YsideBar menu={this.props.sideBarMenu} />
-   	  <YrightBar tabs={rightbarTabs} tabList={rightbarTabLists} userLogo={userLogo} />
+   	  <YsideBar menu={this.props.sideBarMenu} userInfo={false} />
+   	  <YrightBar tabs={rightbarTabs} tabList={rightbarTabLists} />
    	</aside>
 
-- userLogo设置侧边栏显示用户logo与否，默认不显示，显示则设置userLogo=require('../styles/images/usr.jpg')。
+- userInfo设置侧边栏显示用户信息与否，默认不显示，显示则设置userInfo为：
 
+		let userInfo={
+		  logo:require('../../styles/images/usr.jpg'),
+		  name:'test',
+		  email:'test@test.com'
+		};
+		
 #### 左侧
 
 	const sidebarMenu=[{
@@ -343,3 +349,6 @@ $ npm start 		//默认端口8080
 
 
 #### 持续更新中...
+
+
+![2016](https://raw.githubusercontent.com/ahyiru/react-ui-demo/master/doc/2016.png)
