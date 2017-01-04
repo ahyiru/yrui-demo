@@ -247,7 +247,8 @@ export const dropList={
     },{
       pic:'退',
       h4:'退出',
-      p:''
+      p:'',
+      url:'user/login'
     }]
   }]
 };
