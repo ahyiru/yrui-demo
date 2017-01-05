@@ -347,6 +347,9 @@ $ npm start 		//默认端口8080
 - title设置标题。
 - data设置设置提示内容。
 
+#### horizontal menu
+
+添加横向菜单。在body上加上`class="horizontal"`即可。
 
 #### 持续更新中...
 
