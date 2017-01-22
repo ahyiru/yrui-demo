@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 
 import {Ytables} from 'yrui';
 
-import {tableData} from '../../../models/models';
+import {tableData} from '../../models/models';
 
 export default class Tables extends Component {
 

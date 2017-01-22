@@ -1,10 +1,10 @@
 import React,{Component} from 'react';
 
-import EventEmitter from '../../configs/eventEmitter';
+import {Ydnd,Ypanel,Ytools} from 'yrui';
 
-import {addClass,removeClass} from '../../configs/tools';
-
-import {Ydnd,Ypanel} from 'yrui';
+const addClass=Ytools.addClass;
+const removeClass=Ytools.removeClass;
+const eventEmitter=Ytools.eventEmitter;
 
 let themePkg=['default-theme','theme1','theme2','theme3','theme4','stheme1','stheme2','stheme3','stheme4','stheme5','ltheme1','ltheme2','ltheme3','ltheme4'];
 
@@ -39,9 +39,12 @@ export default class Home extends Component {
     super(props);
   };
 
-  componentDidMount(){
-    
+  /*componentDidMount(){
+    dnd.init();
   };
+  componentWillUnmount(){
+  	dnd.distroy();
+  };*/
 
   changeTheme=(theme)=>{
   	themePkg.map(function(v,k){
@@ -60,7 +63,7 @@ export default class Home extends Component {
   };
 
   showNotify=(direction)=>{
-  	EventEmitter.dispatch('subNotify',direction);
+  	eventEmitter.dispatch('subNotify',direction);
   };
 
   render() {

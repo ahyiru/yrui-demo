@@ -7,24 +7,11 @@ var src='/demo';
 
 module.exports = {
 
-  /*//https://webpack.github.io/docs/webpack-dev-server.html#webpack-dev-server-cli
-  devServer: {
-    contentBase: './dist', //Content base
-    inline: true, //Enable watch and live reload
-    host: 'localhost',
-    port: 8080
-  },
-  // http://webpack.github.io/docs/configuration.html#devtool
-  devtool: 'source-map',*/
-
   entry: {
     app: [__dirname + src + '/index']
   },
   output: {
-    // path.join 路径结合、合并.
-    // path.resolve 获取绝对路径.
-    path: path.resolve(__dirname, '_dist'), // 内存中生成文件的路径
-    // publicPath: '/', // 绝对地址,资源存放路径
+    path: path.resolve(__dirname, '_dist'),
     filename: '[name]_[hash:8].js',
   },
   resolve: {
@@ -81,10 +68,6 @@ module.exports = {
         removeEmptyAttributes: true,
         removeStyleLinkTypeAttributes: true,
       }
-    }),
-    /*new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery'
-    })*/
+    })
   ],
 };

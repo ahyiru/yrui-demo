@@ -1,5 +1,5 @@
 var webpack = require('webpack');
-var merge = require('@ersinfotech/merge');// 合并多个对象为一个新的对象
+var merge = require('@ersinfotech/merge');
 
 var webpackConfig = require('./webpack.config');
 
@@ -27,7 +27,7 @@ module.exports = merge(webpackConfig, {
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
-    new webpack.DefinePlugin({ // 设置环境变量来压缩代码
+    new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
     }),
   ],

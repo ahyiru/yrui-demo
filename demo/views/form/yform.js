@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 
 import './form.less';
 
-import drag from './drag';
+import drag from './drag.min';
 
 export default class Yform extends Component {
 

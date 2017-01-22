@@ -1,5 +1,12 @@
 import * as React from 'react';
 import { render } from 'react-dom';
-import app from './app';
+import { Router, hashHistory } from 'react-router';
 
-render(app, document.getElementById('app'));
+import routes from './routes';
+
+import 'font-awesome/css/font-awesome.css';
+
+import 'yrui/lib/yrui.css';
+import './styles/stheme.less';
+
+render(<Router history={hashHistory} routes={routes} />,document.getElementById('app'));

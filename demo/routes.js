@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Route, IndexRoute, Redirect, IndexRedirect } from 'react-router';
-// import Base from './components/base/base';
-const Base=require('./components/base').default;
+const Base=require('./base').default;
 
 import {
   Home,
@@ -24,10 +23,8 @@ import {
   Easypie,
   Yform,
   Log,
-  User,
-  About,
   ErrorPage
-} from './views/content';
+} from './views';
 
 export default (
   <Route path="/" component={Base}>
@@ -59,8 +56,6 @@ export default (
     <Route path="form/yform" component={Yform} />
 
     <Route path="/log" component={Log} />
-    
-    <Route path="/user" component={User} />
 
     <Route path="/404" component={ErrorPage} />
 

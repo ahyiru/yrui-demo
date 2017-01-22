@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 
 import {Yecharts} from 'yrui';
 
-import {chart1,chart2} from '../../../models/echarts';
+import {chart1,chart2} from '../../models/echarts';
 
 
 export default class Echarts extends Component {

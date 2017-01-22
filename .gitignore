@@ -45,9 +45,6 @@ Thumbs.db
 
 # yiru
 y_dist
-js_demo
-jsDemo.js
-ecosystem.json
 webpack.production.js
 
 *.zip

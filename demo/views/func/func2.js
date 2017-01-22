@@ -6,7 +6,7 @@ export default class Func2 extends Component {
     return (
       <div>
         <span>func2</span>
-        <img src={require('../../../styles/images/usr.jpg')} />
+        <img src={require('../../styles/images/usr.jpg')} />
       </div>
     )
   };
