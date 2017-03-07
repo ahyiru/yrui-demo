@@ -43,7 +43,7 @@
     "webpack": "^1.13.3",
     "webpack-dev-middleware": "^1.8.4",
     "webpack-hot-middleware": "^2.13.2",
-    "yrui": "^0.5.13"
+    "yrui": "^0.7.6"
   },
   "dependencies": {
     "bluebird": "^3.4.3",

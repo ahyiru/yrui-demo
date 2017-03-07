@@ -4,6 +4,8 @@
 
 ### [前端知识点总结](https://github.com/ahyiru/react-ui-demo/blob/master/doc/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E7%82%B9.md)
 
+### 前端交流群：621973872
+
 ### 安装 `$ npm i yrui`.
 
 ## 运行demo
@@ -288,6 +290,15 @@ $ npm start 		//默认端口8080
 	
 - url为路由路径。
 - subMenu设置二级菜单。
+
+##### ** 侧边栏支持二级菜单，如需二级以上菜单，默认在主页面上加返回按钮，也可使用面包屑点击返回。
+
+##### 路由配置如下：
+
+	// 二级菜单
+	<Route path="menu1/menu1-1" component={Menu11} />
+	// 三级菜单
+	<Route path="menu2/menu2-1/:menu2-1-1" component={Menu211} />
 
 ### 右侧
 

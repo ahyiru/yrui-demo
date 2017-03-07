@@ -45,6 +45,5 @@ Thumbs.db
 
 # yiru
 y_dist
-webpack.production.js
-
+yarn.lock
 *.zip
