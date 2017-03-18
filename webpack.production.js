@@ -7,20 +7,28 @@ var webpackConfig = require('./webpack.config');
 process.env.NODE_ENV = 'production';
 
 module.exports = merge(webpackConfig, {
+  devtool: 'source-map',
+  cache: false,
   module: {
-    loaders: [{
+    rules: [{
       test: /\.css$/,
-      loader: ExtractTextPlugin.extract('style','css'),
-      exclude: /components/,
+      loader: ExtractTextPlugin.extract({
+        fallbackLoader:'style-loader',
+        use:'css-loader',
+      }),
     },{
       test: /\.less$/,
-      loader: ExtractTextPlugin.extract('style','css!less'),
-      exclude: /components/,
+      loader: ExtractTextPlugin.extract({
+        fallbackLoader:'style-loader',
+        use:['css-loader','less-loader'],
+      }),
     }],
   },
   plugins: [
-    new ExtractTextPlugin('[name]_[contenthash].css', {
+    new ExtractTextPlugin({
+      filename:'[name]_[contenthash].css',
       allChunks: true,
+      disable:false,
     }),
     new webpack.optimize.UglifyJsPlugin({
       output: {
@@ -32,6 +40,6 @@ module.exports = merge(webpackConfig, {
     }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production')
-    })
+    }),
   ],
 });

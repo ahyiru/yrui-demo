@@ -3,71 +3,70 @@ var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var appName=require('./package').name;
 
-var src='/demo';
+const src = path.resolve(process.cwd(), 'demo');
+const nodeModules = path.resolve(process.cwd(), 'node_modules');
 
 module.exports = {
-
+  context: src,
   entry: {
-    app: [__dirname + src + '/index']
+    app: [ path.resolve(src, 'index.js')]
   },
   output: {
     path: path.resolve(__dirname, '_dist'),
     filename: '[name]_[hash:8].js',
+    libraryTarget:'umd',
   },
   resolve: {
-    root: [
-      __dirname + src,
-      __dirname + '/node_modules',
-      __dirname,
+    modules: [
+      src,
+      nodeModules,
     ],
-    extensions: ['', '.js', '.jsx','.ts','.tsx'],
+    extensions: ['.js','.jsx','.ts','.tsx','.json','.css','.less'],
   },
+
   module: {
-    loaders: [{
-      test: /\.tsx?$/,
-      loaders: ['babel','ts'],
-      exclude: /node_modules/,
-    }, {
+    rules: [{
       test: /\.jsx?$/,
-      loaders: ['babel'],
-      exclude: /node_modules/,
+      loader:'babel-loader',
+      exclude: [nodeModules],
     }, {
-      test: /\.css$/,
-      loaders: ['style', 'css'],
-      include: /components/,
-    }, {
-      test: /\.less$/,
-      loaders: ['style', 'css', 'less'],
-      include: /components/,
-    }, {
+      test: /\.tsx?$/,
+      use:['babel-loader','ts-loader'],
+      exclude: [nodeModules],
+    },{
       test: /\.(jpe?g|png|gif|svg|ico)/i,
-      loader: 'file?name=img_[hash:8].[ext]',
-    }, {
+      loader: 'file-loader?name=img/img_[hash:8].[ext]',
+    },{
       test: /\.(ttf|eot|svg|woff|woff2)/,
-      loader: 'file',
+      loader: 'file-loader',
     }, {
       test: /\.(pdf)/,
-      loader: 'file',
+      loader: 'file-loader',
     }, {
       test: /\.(swf|xap)/,
-      loader: 'file',
+      loader: 'file-loader',
+    }, {
+      test: /\.huy/,
+      loader: 'file-loader',
     }],
   },
   plugins: [
     new HtmlWebpackPlugin({
       title:appName,
-      template: __dirname + src + '/index.html',
-      favicon: __dirname + src + '/favicon.ico',
+      template: path.resolve(src, 'index.html'),
+      favicon: path.resolve(src, 'favicon.ico'),
       inject: false,
       minify: {
         html5: true,
         collapseWhitespace: true,
-        // conservativeCollapse: true,
         removeComments: true,
         removeTagWhitespace: true,
         removeEmptyAttributes: true,
         removeStyleLinkTypeAttributes: true,
       }
-    })
+    }),
+    new webpack.LoaderOptionsPlugin({
+      minimize: true,
+    }),
   ],
 };

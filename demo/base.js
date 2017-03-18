@@ -1,93 +1,49 @@
 import React,{Component} from 'react';
 
-import {YpageHeader,YbackTop,Ynotify,Ytools,YsideBar,YrightBar,Ynav} from 'yrui';
+import {Main,Brand,SideBar,RightBar,Nav,Tabs,Tabpage,List,tools} from 'yrui';
 
-import {sidebarMenu,notifyList,rightbarTabs,rightbarTabLists,dropList} from './models/models';
+import {sidebarMenu,rightbarTabs,rightbarTabLists,dropList,projectList} from './models/models';
 
-var getCurrent=Ytools.getCurrent;
-var getBreadcrumb=Ytools.getBreadcrumb;
-var addClass=Ytools.addClass;
 
-if(navigator.cookieEnabled){
-  let theme=localStorage.getItem('theme')||'';
-  addClass(document.body,theme);
-  let collapse=localStorage.getItem('collapse')||'';
-  addClass(document.body,collapse);
-}
-else{
-  console.log('你处于隐私模式!');
-}
+const {getCurrent,getBreadcrumb,addClass,$storage}=tools;
 
-export default class Yframe extends Component {
-	constructor(props){
-    super(props);
-    this.str=location.hash.match(/#(\S+)\?/)||location.hash.match(/#(\S+)/);
+import {getDefault} from './servers/storage';
 
-    let menu=getCurrent(sidebarMenu,this.str);
-    let breadcrumb=getBreadcrumb(sidebarMenu,this.str);
-    this.state=({
-      menu:menu,
-      breadcrumb:breadcrumb,
-      notify:notifyList
-    });
-
-    window.addEventListener('hashchange',this.hashChg,false);
-  };
-
-  //hashchange
-  hashChg=()=>{
-    document.documentElement.scrollTop?(document.documentElement.scrollTop=0):(document.body.scrollTop=0);
-    let str=location.hash.match(/#(\S+)\?/)||location.hash.match(/#(\S+)/);
-    let menu=getCurrent(sidebarMenu,str);
-    let breadcrumb=getBreadcrumb(sidebarMenu,str);
-    this.setState({
-      menu:menu,
-      breadcrumb:breadcrumb
-    });
-  }
-
-  componentWillUnmount=()=>{
-    window.removeEventListener('hashchange',this.hashChg,false);
-  };
+export default class Frame extends Component {
 
   render() {
-  	const {children}=this.props;
-  	const {breadcrumb,menu,notify}=this.state;
+    getDefault();
+  	document.documentElement.scrollTop?(document.documentElement.scrollTop=0):(document.body.scrollTop=0);
+    const str=location.hash.match(/#(\S+)\?/)||location.hash.match(/#(\S+)/);
+    const menu=getCurrent(sidebarMenu,str);
+    const breadcrumb=getBreadcrumb(sidebarMenu,str);
     return (
       <div>
         <header>
           <div className="y-header">
-            <section className="y-brand">
-              <a href="javascript:;" className="brand"> 
-                <span><b>React</b> UI Demo</span>   
-              </a>
-            </section>
-            <Ynav className="y-nav" dropList={dropList} />
+            <Brand title="React" subtitle="UI Demo" logo={false} />
+            <Nav dropList={dropList} hideRightTogbar={false} />
           </div>
         </header>
         <aside>
-          <YsideBar menu={menu} />
-          <YrightBar tabs={rightbarTabs} tabList={rightbarTabLists} />
+          <SideBar menu={menu} userInfo={null} />
+          <RightBar>
+            <Tabs>
+              {
+                rightbarTabs.map((v,k)=>{
+                  return (
+                    <Tabpage key={`tabs-${k}`} icon={v.icon}>
+                      <List list={rightbarTabLists} name={v.name} />
+                    </Tabpage>
+                  )
+                })
+              }
+            </Tabs>
+          </RightBar>
         </aside>
-
-        <main>
-	        <section className="y-main">
-	          <div className="y-container">
-	            
-              <YpageHeader breadcrumb={breadcrumb} hidePagetitle={false} />
-
-	            <div className="y-pagecontent">
-	              <div>{children}</div>
-	            </div>
-
-	          </div>
-	          
-	          <YbackTop />
-
-	        </section>
-	      </main>
-
-        <Ynotify notify={notify} />
+        <Main breadcrumb={breadcrumb} hidePagetitle={false}>
+          {this.props.children}
+        </Main>
       </div>
     );
   }

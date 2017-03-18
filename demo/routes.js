@@ -1,65 +1,58 @@
 import * as React from 'react';
-import { Route, IndexRoute, Redirect, IndexRedirect } from 'react-router';
-const Base=require('./base').default;
+import { Route, IndexRoute } from 'react-router';
+import Frame from './base';
 
-import {
-  Home,
-  Func1,
-  Func2,
-  Func3,
-  UI1,
-  UI2,
-  UI3,
-  Plugin1,
-  Plugin2,
-  Plugin3,
-  Plugin4,
-  Tables,
-  Datatables,
-  BStables,
-  Highcharts,
-  Echarts,
-  Recharts,
-  Easypie,
-  Yform,
-  Log,
-  ErrorPage
-} from './views';
+import Layout from './views/layout';
+
+import HeadDemo from './views/headdemo';
+import AsideDemo from './views/asidedemo';
+import MainDemo from './views/maindemo';
+
+import ColDemo from './views/coldemo';
+import Color from './views/color';
+import ButtonDemo from './views/buttondemo';
+import PanelDemo from './views/paneldemo';
+import TableDemo from './views/tabledemo';
+import EchartDemo from './views/echartdemo';
+import InputDemo from './views/inputdemo';
+import FormDemo from './views/formdemo';
+
+import ItemsDemo from './views/itemsdemo';
+import ListDemo from './views/listdemo';
+import TabsDemo from './views/tabsdemo';
+import RadiocheckboxDemo from './views/radiocheckboxdemo';
+import SelectswitchDemo from './views/selectswitchdemo';
+import TextareabadgeDemo from './views/textareabadgedemo';
+
 
 export default (
-  <Route path="/" component={Base}>
+  <Route path="/" component={Frame}>
 
-    <IndexRoute component={Home} />
+    <IndexRoute component={Layout} />
 
-    <Route path="function/function1" component={Func1} />
-    <Route path="function/function2" component={Func2} />
-    <Route path="function/function3" component={Func3} />
-  
-    <Route path="ui/ui1" component={UI1} />
-    <Route path="ui/ui2" component={UI2} />
-    <Route path="ui/ui3" component={UI3} />
-  
-    <Route path="plugins/plugin1" component={Plugin1} />
-    <Route path="plugins/plugin2" component={Plugin2} />
-    <Route path="plugins/plugin3" component={Plugin3} />
-    <Route path="plugins/plugin4" component={Plugin4} />
-  
-    <Route path="tables/yTables" component={Tables} />
-    <Route path="tables/datatables" component={Datatables} />
-    <Route path="tables/bstables" component={BStables} />
-  
-    <Route path="charts/highcharts" component={Highcharts} />
-    <Route path="charts/echarts" component={Echarts} />
-    <Route path="charts/recharts" component={Recharts} />
-    <Route path="charts/easypie" component={Easypie} />
+    <Route path="base/head" component={HeadDemo} />
+    <Route path="base/aside" component={AsideDemo} />
+    <Route path="base/main" component={MainDemo} />
 
-    <Route path="form/yform" component={Yform} />
+    <Route path="component/col" component={ColDemo} />
+    <Route path="component/color" component={Color} />
+    <Route path="component/button" component={ButtonDemo} />
+    <Route path="component/panel" component={PanelDemo} />
+    <Route path="component/table" component={TableDemo} />
+    <Route path="component/echart" component={EchartDemo} />
+    <Route path="component/input" component={InputDemo} />
+    <Route path="component/form" component={FormDemo} />
 
-    <Route path="/log" component={Log} />
+    <Route path="component/items" component={ItemsDemo} />
+    <Route path="component/list" component={ListDemo} />
+    <Route path="component/tabs" component={TabsDemo} />
+    <Route path="component/radio-checkbox" component={RadiocheckboxDemo} />
+    <Route path="component/select-switch" component={SelectswitchDemo} />
+    <Route path="component/textarea-badge" component={TextareabadgeDemo} />
 
-    <Route path="/404" component={ErrorPage} />
-
-    <Route path="*" onEnter={(params,replace)=>replace('/404')} />
+    <Route path="tools/tool1" component={FormDemo} />
+    <Route path="tools/tool2" component={FormDemo} />
+    <Route path="tools/tool3" component={FormDemo} />
 
   </Route>
 );

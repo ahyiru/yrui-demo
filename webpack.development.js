@@ -7,26 +7,26 @@ process.env.NODE_ENV = 'development';
 
 module.exports = merge(webpackConfig, {
   devtool: 'eval',
-  debug: true,
+  cache: true,
+  bail: false,
+  target: 'web',
   entry: {
     app: ['webpack-hot-middleware/client'],
     login: ['webpack-hot-middleware/client'],
   },
   module: {
-    loaders: [{
+    rules: [{
       test: /\.css$/,
-      loaders: ['style', 'css'],
-      exclude: /components/,
+      use: ['style-loader', 'css-loader'],
     },{
       test: /\.less$/,
-      loaders: ['style', 'css', 'less'],
-      exclude: /components/,
+      use: ['style-loader', 'css-loader', 'less-loader'],
     }],
   },
   plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
+    new webpack.HotModuleReplacementPlugin(/*{multiStep: true}*/),
+    new webpack.NoEmitOnErrorsPlugin(),
+    new webpack.NamedModulesPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
     }),
